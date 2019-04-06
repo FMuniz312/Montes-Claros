@@ -11,8 +11,10 @@ namespace ControleDeFuncionario.Entities
         public string Email { get; set; }
         public DateTime BirthDate { get; private set; }
         public Enum Services { get; set; }
-        public double LiquidSalary { get; set; }
-
+        public double LiquidSalary { get; private set; }
+        double INSS = 0.12;
+        
+        
         public Register()
         {
 
@@ -24,7 +26,10 @@ namespace ControleDeFuncionario.Entities
             BaseSalary = baseSalary;
             BirthDate = birthDate;
             Services = services;
-        }
+            Finance finance = new Finance();
+            finance.taxs(this,INSS);
+
+            }
 
         public Register(string name, double baseSalary, string email, DateTime birthDate, Enum services) : this (name,baseSalary,birthDate,services)
         {
@@ -33,18 +38,22 @@ namespace ControleDeFuncionario.Entities
            
         }
 
-        public void SalaryChangesPlus(double value)
+        public void BaseSalaryFunction(double value)
         {
-            BaseSalary += value;
-
+            BaseSalary = value;
         }
-
+       
+        public void LiquidSalaryFunction(double value)
+        {
+            LiquidSalary = value;
+        }
         
 
         public override string ToString()
         {
             return "Nome: " + Name + 
-                    "\nSalário Salário: " + Salary +
+                    "\nSalário Bruto: " + BaseSalary +
+                    "\nSalário Líquido: " + LiquidSalary +
                     "\nData de Nascimento :" + BirthDate +
                     "\nServiço Prestado: " + Services +
                     "\nEmail " + Email!=null? Email:"Sem email";

@@ -1,0 +1,11 @@
+C:\Users\filip\Desktop\C# Projetos\Montes Claros\ControleDeFuncionario\bin\Debug\netcoreapp2.1\ControleDeFuncionario.deps.json
+C:\Users\filip\Desktop\C# Projetos\Montes Claros\ControleDeFuncionario\bin\Debug\netcoreapp2.1\ControleDeFuncionario.runtimeconfig.json
+C:\Users\filip\Desktop\C# Projetos\Montes Claros\ControleDeFuncionario\bin\Debug\netcoreapp2.1\ControleDeFuncionario.runtimeconfig.dev.json
+C:\Users\filip\Desktop\C# Projetos\Montes Claros\ControleDeFuncionario\bin\Debug\netcoreapp2.1\ControleDeFuncionario.dll
+C:\Users\filip\Desktop\C# Projetos\Montes Claros\ControleDeFuncionario\bin\Debug\netcoreapp2.1\ControleDeFuncionario.pdb
+C:\Users\filip\Desktop\C# Projetos\Montes Claros\ControleDeFuncionario\obj\Debug\netcoreapp2.1\ControleDeFuncionario.csprojAssemblyReference.cache
+C:\Users\filip\Desktop\C# Projetos\Montes Claros\ControleDeFuncionario\obj\Debug\netcoreapp2.1\ControleDeFuncionario.csproj.CoreCompileInputs.cache
+C:\Users\filip\Desktop\C# Projetos\Montes Claros\ControleDeFuncionario\obj\Debug\netcoreapp2.1\ControleDeFuncionario.AssemblyInfoInputs.cache
+C:\Users\filip\Desktop\C# Projetos\Montes Claros\ControleDeFuncionario\obj\Debug\netcoreapp2.1\ControleDeFuncionario.AssemblyInfo.cs
+C:\Users\filip\Desktop\C# Projetos\Montes Claros\ControleDeFuncionario\obj\Debug\netcoreapp2.1\ControleDeFuncionario.dll
+C:\Users\filip\Desktop\C# Projetos\Montes Claros\ControleDeFuncionario\obj\Debug\netcoreapp2.1\ControleDeFuncionario.pdb

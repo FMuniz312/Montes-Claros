@@ -4,24 +4,31 @@ using System.Text;
 
 namespace ControleDeFuncionario.Entities
 {
-     class Finance : Register
+     class Finance 
     {
 
-        double INSS = 0.12;
-        public void LiquidSalary(double salarybase)
-        {
-            salarybase *= INSS;
 
-        }
-        public void Raise(double raise)
-        {
-            SalaryChangesPlus(raise);
 
+        public void taxs(Register funcionario,double percentagetaxs)
+        {
+            double LiquidSalary = funcionario.BaseSalary;
+            LiquidSalary -= LiquidSalary*percentagetaxs;
+            funcionario.LiquidSalaryFunction(LiquidSalary);
         }
 
-        public void Decrease(double decrease)
+        public void Raise(Register funcionario, double raise)
         {
-            SalaryChangesPlus(-decrease);
+
+            double NewValue = funcionario.BaseSalary;
+            NewValue += raise;
+            funcionario.BaseSalaryFunction(NewValue);
+        }
+
+        public void Decrease(Register funcionario, double decrease)
+        {
+            double NewValue = funcionario.BaseSalary;
+            NewValue -= decrease;
+            funcionario.BaseSalaryFunction(decrease);
         }
 
 

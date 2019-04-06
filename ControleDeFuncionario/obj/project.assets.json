@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\filip\\source\\repos\\Montes Claros\\ControleDeFuncionario\\ControleDeFuncionario.csproj",
+      "projectUniqueName": "C:\\Users\\filip\\Desktop\\C# Projetos\\Montes Claros\\ControleDeFuncionario\\ControleDeFuncionario.csproj",
       "projectName": "ControleDeFuncionario",
-      "projectPath": "C:\\Users\\filip\\source\\repos\\Montes Claros\\ControleDeFuncionario\\ControleDeFuncionario.csproj",
+      "projectPath": "C:\\Users\\filip\\Desktop\\C# Projetos\\Montes Claros\\ControleDeFuncionario\\ControleDeFuncionario.csproj",
       "packagesPath": "C:\\Users\\filip\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\filip\\source\\repos\\Montes Claros\\ControleDeFuncionario\\obj\\",
+      "outputPath": "C:\\Users\\filip\\Desktop\\C# Projetos\\Montes Claros\\ControleDeFuncionario\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
