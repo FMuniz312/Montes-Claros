@@ -11,6 +11,7 @@ namespace ControleDeFuncionario
         static void Main(string[] args)
         {
             List<Register> WorkerList = new List<Register>();
+            Finance finance = new Finance();
 
             Console.WriteLine("Qual operação quer fazer");
             Console.WriteLine("1.Registrar funcionários");
@@ -40,13 +41,21 @@ namespace ControleDeFuncionario
                         WorkerList.Add(Worker);
                     }; break;
 
-                case 2:
+                case 2: //Aumentando o salario do funcionario (Por valor)
                     Console.WriteLine("Aumentar o salário de qual funcionario?");
-                                                                                      
-                    
-
-
+                    string tworker = Console.ReadLine();
+                    foreach (Register worker in WorkerList)
+                    {
+                        if (worker.Name == tworker)
+                        {
+                            Console.WriteLine("De quanto será o aumento para o funcinario(a) {0}", worker);
+                            double traise = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                            finance.Raise(worker, traise);
+                        }
+                    }
                     ; break;
+
+
             }
 
         }
