@@ -10,52 +10,46 @@ namespace ControleDeFuncionario
     {
         static void Main(string[] args)
         {
-            List<Register> WorkerList = new List<Register>();
-            Finance finance = new Finance();
 
-            Console.WriteLine("Qual operação quer fazer");
-            Console.WriteLine("1.Registrar funcionários");
-            Console.WriteLine("2. Aumentar salário");
-
-            int choice = int.Parse(Console.ReadLine());
-            switch (choice)
+            int choice = 0;
+            try
             {
-                case 1://Registrando funcionario
+                while (choice != 5)
+                {
+                    Console.WriteLine("Qual operação quer fazer?");
+                    Console.WriteLine("1.Registrar funcionários");
+                    Console.WriteLine("2. Aumentar salário");
+                    Console.WriteLine("3. Diminuir salário");
+                    Console.WriteLine("4. Demissão");
 
-                    Console.WriteLine("Quantos funcionários serão registrados?");
-                    int n = int.Parse(Console.ReadLine());
-                    for (int i = 0; i < n; i++)
+                    choice = int.Parse(Console.ReadLine());
+
+
+                    switch (choice)
                     {
-                        Console.Write("Nome:");
-                        string tname = Console.ReadLine();
-                        Console.Write("Data de nascimento:");
-                        DateTime tbrtdate = DateTime.Parse(Console.ReadLine());
-                        Console.Write("Ocupação:");
-                        Services tservices = Enum.Parse<Services>(Console.ReadLine());
-                        Console.Write("Salário Bruto:");
-                        double tbasesalary = double.Parse(Console.ReadLine());
-                        Console.Write("Email(opcional):");
-                        string temail = Console.ReadLine();
+                        case 1:
+                            RegisterWorkerFunctions.RegistrarFuncionario();
+                            ; break;
 
-                        Register Worker = new Register(tname, tbasesalary, temail, tbrtdate, tservices);
-                        WorkerList.Add(Worker);
-                    }; break;
+                        case 2:
+                            RegisterWorkerFunctions.dandoAumento();
+                            ; break;
 
-                case 2: //Aumentando o salario do funcionario (Por valor)
-                    Console.WriteLine("Aumentar o salário de qual funcionario?");
-                    string tworker = Console.ReadLine();
-                    foreach (Register worker in WorkerList)
-                    {
-                        if (worker.Name == tworker)
-                        {
-                            Console.WriteLine("De quanto será o aumento para o funcinario(a) {0}", worker);
-                            double traise = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                            finance.Raise(worker, traise);
-                        }
+                        case 3:
+                            RegisterWorkerFunctions.dandoRebaixamento();
+                            ; break;
+
+                        case 4:
+                            RegisterWorkerFunctions.demissao();
+                            ; break;
+
                     }
-                    ; break;
-
-
+                }//Dentro do loop 
+            }
+             catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.ReadLine();
             }
 
         }

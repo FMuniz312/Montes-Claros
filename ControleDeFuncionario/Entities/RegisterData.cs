@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
+using ControleDeFuncionario.Exceptions;
 
 namespace ControleDeFuncionario.Entities
 {
@@ -15,10 +15,7 @@ namespace ControleDeFuncionario.Entities
         double INSS = 0.12;
 
 
-        public Register()
-        {
 
-        }
 
         public Register(string name, double baseSalary, DateTime birthDate, Enum services)
         {
@@ -27,7 +24,8 @@ namespace ControleDeFuncionario.Entities
             BirthDate = birthDate;
             Services = services;
             Finance finance = new Finance();
-            finance.taxs(this, INSS);
+            Finance.taxs(this, INSS);
+            Email = null;
 
         }
 
@@ -40,11 +38,19 @@ namespace ControleDeFuncionario.Entities
 
         public void BaseSalaryFunction(double value)
         {
+            if (value < 0)
+            {
+                throw new FinanceExceptions("Valor negativo não é permitido!");
+            }
             BaseSalary = value;
         }
 
         public void LiquidSalaryFunction(double value)
         {
+            if (value < 0)
+            {
+                throw new FinanceExceptions("Valor negativo não é permitido!");
+            }
             LiquidSalary = value;
         }
 
@@ -57,7 +63,14 @@ namespace ControleDeFuncionario.Entities
             sb.AppendLine("Salário Líquido: " + LiquidSalary);
             sb.AppendLine("Data de Nascimento :" + BirthDate.ToString("dd/MM/yyyy"));
             sb.AppendLine("Serviço Prestado: " + Services);
-            sb.AppendLine("Email: " + (Email != null ? Email : "Sem email"));
+            if (Email != null)
+            {
+                sb.AppendLine("Email: " + Email);
+            }
+            else
+            {
+                sb.AppendLine("Email: Sem email");
+            } 
             return sb.ToString();
         }
     }
